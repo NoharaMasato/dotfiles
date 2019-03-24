@@ -1,4 +1,6 @@
 echo "bashrc is loaded"
+disc_ratio=`df -h | sed -n 2P | awk '{print $5}'`
+echo "ディスクの使用量は${disc_ratio}です"
 
 # added by Anaconda3 5.2.0 installer
 export PATH="/Users/noharamasato/anaconda3/bin:$PATH"
@@ -7,9 +9,9 @@ export PATH="/Users/noharamasato/anaconda3/bin:$PATH"
 #cd ~/Desktop
 
 # ========= alias ==========
-alias aws="ssh -i ~/.ssh/practice-aws3.pem ec2-user@18.191.16.146"
-alias keio_ssh="ssh ua199796@logex00.educ.cc.keio.ac.jp"
-alias ls="ls -a" 
+alias la="ls -a" 
+alias ll="ls -l"
+
 function cdls() {
  \cd $1; 
  ls; 
