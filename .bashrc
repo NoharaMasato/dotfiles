@@ -9,16 +9,28 @@ export PATH="/Users/noharamasato/anaconda3/bin:$PATH"
 #cd ~/Desktop
 
 # ========= alias ==========
-alias la="ls -a" 
-alias ll="ls -l"
+case "${OSTYPE}" in
+darwin*) #これはmacの場合
+    export LSCOLORS=gxfxcxdxbxegedabagacad #lsで表示されるディレクトリやファイル名の色を変更
+    alias ls="ls -G"
+    alias la="ls -aG" 
+    alias ll="ls -lG"
 
-function cdls() {
- \cd $1; 
- ls; 
-}
-alias cd=cdls
-alias "rails_dk"="docker-compose run web bin/rails"
-alias "rails_dks"="docker-compose run --rm --service-ports web"
+    function cdls() {
+     \cd $1; 
+     ls -G; 
+    }
+    alias cd=cdls
+    alias "rails_dk"="docker-compose run web bin/rails"
+    alias "rails_dks"="docker-compose run --rm --service-ports web"
+    ;;
+linux*) linuxの場合
+    alias ls='ls --color'
+    alias ll='ls -l --color'
+    alias la='ls -la --color'
+    ;;
+esac
+
 #============================
 
 #sublime textをterminalから開くためのコマンド設定
