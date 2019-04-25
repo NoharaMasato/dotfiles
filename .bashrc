@@ -5,7 +5,7 @@ function cdls() {
 alias cd=cdls
 
 case "${OSTYPE}" in
-	darwin*) #これはmacの場合
+  darwin*) #これはmacの場合
     disc_ratio=`df -h | sed -n 2P | awk '{print $5}'`
     echo "ディスクの使用量は${disc_ratio}です"
     
@@ -44,7 +44,7 @@ case "${OSTYPE}" in
     export PATH=$PATH:/usr/local/go/bin
     export GOPATH=$HOME/go
     ;;
-linux*) linuxの場合
+  linux*) linuxの場合
     alias ls='ls --color'
     alias ll='ls -l --color'
     alias la='ls -la --color'
