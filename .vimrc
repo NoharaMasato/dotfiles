@@ -41,7 +41,7 @@ if OSTYPE == "Darwin\n"
   "キーマップ。（ctrl+nで起動できるように）
   map <C-n> :NERDTreeToggle<CR>
   
-" ============== this part is need for neobundle ===============
+  " ============== this part is need for neobundle ===============
   if &compatible
     set nocompatible               " Be iMproved
   endif
