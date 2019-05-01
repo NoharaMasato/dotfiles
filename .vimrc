@@ -10,6 +10,8 @@ set cursorline
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+autocmd FileType * setlocal formatoptions-=ro
+
 " can undo
 if has('persistent_undo')
   set undodir=~/.vim/undo
@@ -21,6 +23,8 @@ imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
 
+" 空行をspace + enterで挿入
+noremap <Space><CR> o<ESC>
 
 " use clipborad when yank
 set clipboard+=unnamed

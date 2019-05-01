@@ -4,6 +4,18 @@ function cdls() {
 }
 alias cd=cdls
 
+# confirm whem remove
+alias rm='rm -i'
+
+# less をvimの支配下にあるlessを使う
+alias less='/usr/share/vim/vim80/macros/less.sh'
+
+# pagerにlessを使う　manが色付きになる
+export PAGER=less
+
+# lessのオプションをつける
+export LESS='-g -i -M -R -S -W -z-4 -x2'
+
 case "${OSTYPE}" in
   darwin*) #これはmacの場合
     disc_ratio=`df -h | sed -n 2P | awk '{print $5}'`
@@ -16,6 +28,7 @@ case "${OSTYPE}" in
     alias ls="ls -G"
     alias la="ls -aG" 
     alias ll="ls -lG"
+    alias lal="ls -laG"
     
     alias "rails_dk"="docker-compose run web bin/rails"
     alias "rails_dks"="docker-compose run --rm --service-ports web"
@@ -37,7 +50,7 @@ case "${OSTYPE}" in
     # git補間とプロンプト表示にブランチ名を出すかつ、短くする
     source /usr/local/git/contrib/completion/git-prompt.sh
     source /usr/local/git/contrib/completion/git-completion.bash
-    export PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+    export PS1='\[\033[35m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
     GIT_PS1_SHOWDIRTYSTATE=true
     
     # Go path 設定
@@ -48,22 +61,6 @@ case "${OSTYPE}" in
     alias ls='ls --color'
     alias ll='ls -l --color'
     alias la='ls -la --color'
+    alias vi='vim' # mac の場合は最初からvimになる
     ;;
 esac
-
-# cowsayをランダムに名言を話させるための関数
-# function random_cowsay() {
-#     # Only brew user!
-#     # If you are not brew user, change 'COWS' path
-#     COWS=`brew --prefix`/Cellar/cowsay/3.04/share/cows
-#     NBRE_COWS=$(ls -1 $COWS | wc -l)
-#     COWS_RANDOM=$(expr $RANDOM % $NBRE_COWS + 1)
-#     COW_NAME=$(ls -1 $COWS | awk -F\. -v COWS_RANDOM_AWK=$COWS_RANDOM 'NR == COWS_RANDOM_AWK {print $1}')
-#     cowsay -f $COW_NAME "`Fortune -s`"
-# }
-# if which fortune cowsay >/dev/null; then
-#     while :
-#     do
-#         random_cowsay 2>/dev/null && break
-#     done
-# fi && unset -f random_cowsay
