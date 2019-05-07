@@ -1,3 +1,5 @@
+echo "bashrc is loaded"
+
 # pagerにlessを使う　manが色付きになる
 export PAGER=less
 
@@ -9,8 +11,8 @@ case "${OSTYPE}" in
     disc_ratio=`df -h | sed -n 2P | awk '{print $5}'`
     echo "ディスクの使用量は${disc_ratio}です"
 
-    if [ "~/.bash_aliases" ]; then
-      source ~/.bash_aliases
+    if [ -f ~/.bash_aliases ]; then
+        . ~/.bash_aliases
     fi
 
     # added by Anaconda3 5.2.0 installer
