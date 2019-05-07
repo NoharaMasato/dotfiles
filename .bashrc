@@ -56,6 +56,9 @@ case "${OSTYPE}" in
     # Go path 設定
     export PATH=$PATH:/usr/local/go/bin
     export GOPATH=$HOME/go
+
+    # anaconda path
+    export PATH=/Users/user_name/anaconda3/bin:$PATH
     ;;
   linux*) linuxの場合
     alias ls='ls --color'
