@@ -10,6 +10,10 @@ alias rm='rm -i'
 # less をvimの支配下にあるlessを使う
 alias less='/usr/share/vim/vim80/macros/less.sh'
 
+alias de='cd ~/Desktop'
+
+alias hi='history'
+
 # pagerにlessを使う　manが色付きになる
 export PAGER=less
 
@@ -29,7 +33,7 @@ case "${OSTYPE}" in
     alias la="ls -aG" 
     alias ll="ls -lG"
     alias lal="ls -laG"
-    
+
     alias "rails_dk"="docker-compose run web bin/rails"
     alias "rails_dks"="docker-compose run --rm --service-ports web"
     
