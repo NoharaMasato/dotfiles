@@ -1,4 +1,3 @@
-echo "bash_aliases is loaded"
 function cdls() {
  \cd $1; 
  ls -G; 
@@ -8,6 +7,7 @@ alias rm='rm -i' # confirm whem remove
 alias less='/usr/share/vim/vim80/macros/less.sh' # less をvimの支配下にあるlessを使う
 alias de='cd ~/Desktop'
 alias hi='history'
+alias dc='docker'
 
 case "${OSTYPE}" in
   darwin*) #これはmacの場合

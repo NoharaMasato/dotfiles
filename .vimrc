@@ -10,6 +10,9 @@ set cursorline
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+" display number when search word
+set shortmess-=S
+
 autocmd FileType * setlocal formatoptions-=ro
 
 " can undo
@@ -25,6 +28,18 @@ imap ( ()<LEFT>
 
 " 空行をspace + enterで挿入
 noremap <Space><CR> o<ESC>
+
+" shift + hで行頭に移動
+noremap <S-h> ^
+
+" shift + lで行末に移動
+noremap <S-l> $
+
+" 補完で候補を出すようにする 
+set pumheight=10
+
+" ctrl + w + |で画面縦分割 
+" nnoremap <C-w><S-\\> :vsplit<CR>
 
 " use clipborad when yank
 set clipboard+=unnamed
