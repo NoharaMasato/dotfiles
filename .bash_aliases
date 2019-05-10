@@ -8,6 +8,7 @@ alias less='/usr/share/vim/vim80/macros/less.sh' # less をvimの支配下にあ
 alias de='cd ~/Desktop'
 alias hi='history'
 alias dc='docker'
+alias l='ls'
 
 case "${OSTYPE}" in
   darwin*) #これはmacの場合
