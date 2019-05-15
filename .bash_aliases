@@ -19,7 +19,7 @@ case "${OSTYPE}" in
     alias "rails_dk"="docker-compose run web bin/rails"
     alias "rails_dks"="docker-compose run --rm --service-ports web"
     ;;
-  linux*) linuxの場合
+  linux*) #linuxの場合
     alias ls='ls --color'
     alias ll='ls -l --color'
     alias la='ls -la --color'
