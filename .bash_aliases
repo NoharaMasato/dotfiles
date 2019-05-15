@@ -22,7 +22,8 @@ case "${OSTYPE}" in
   linux*) #linuxの場合
     alias ls='ls --color'
     alias ll='ls -l --color'
-    alias la='ls -la --color'
+    alias la='ls -a --color'
+    alias lal='ls -la --color'
     alias vi='vim' # mac の場合は最初からvimになる
     ;;
 esac
