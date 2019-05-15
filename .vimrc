@@ -21,6 +21,9 @@ if has('persistent_undo')
   set undofile
 endif
 
+" コメントアウトされた文の色を変更
+hi Comment ctermfg=Cyan
+
 " かっこの左側を押すと右側も出てくるような設定
 imap { {}<LEFT>
 imap [ []<LEFT>
