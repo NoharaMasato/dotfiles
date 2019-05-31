@@ -14,8 +14,11 @@ case "${OSTYPE}" in
         . ~/.bash_aliases
     fi
 
+    # g++を最新のにするために読み込む
+    export PATH=/usr/local/bin:$PATH
+
     # added by Anaconda3 5.2.0 installer
-    export PATH="/Users/noharamasato/anaconda3/bin:$PATH"
+    export PATH="/Users/noharamasato2/anaconda3/bin:$PATH"
 
     export LSCOLORS=gxfxcxdxbxegedabagacad #lsで表示されるディレクトリやファイル名の色を変更
     # node nodebrew path 設定
@@ -30,11 +33,11 @@ case "${OSTYPE}" in
       fi  
     }
 
-    eval "$(rbenv init -)" 
+    #eval "$(rbenv init -)" 
 
     # git補間とプロンプト表示にブランチ名を出すかつ、短くする
-    source /usr/local/git/contrib/completion/git-prompt.sh
-    source /usr/local/git/contrib/completion/git-completion.bash
+    source $HOME/.git-completion.bash
+    source $HOME/.git-prompt.sh
     export PS1='\[\033[35m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
     GIT_PS1_SHOWDIRTYSTATE=true
 

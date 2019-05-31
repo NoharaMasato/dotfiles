@@ -3,6 +3,7 @@
 # ln -s ~/dotfiles/.vimrc ~/
 # ln -s ~/dotfiles/.tmux.conf ~/
 # ln -s ~/dotfiles/.bash_aliases ~/
+# ln -s ~/dotfiles/.gitconfig ~/
 
 DOTPATH=~/.dotfiles
 

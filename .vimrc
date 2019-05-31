@@ -67,6 +67,7 @@ if OSTYPE == "Darwin\n"
 
   "キーマップ。（ctrl+nで起動できるように）
   map <C-n> :NERDTreeToggle<CR>
+
   
   " ============== this part is need for neobundle ===============
   if &compatible
@@ -74,16 +75,17 @@ if OSTYPE == "Darwin\n"
   endif
   
   " Required:
-  set runtimepath+=/Users/noharamasato/.vim/bundle/neobundle.vim/
+  set runtimepath+=/Users/noharamasato2/.vim/bundle/neobundle.vim/
   
   " Required:
-  call neobundle#begin(expand('/Users/noharamasato/.vim/bundle'))
+  call neobundle#begin(expand('/Users/noharamasato2/.vim/bundle'))
   
   " Let NeoBundle manage NeoBundle
   " Required:
   NeoBundleFetch 'Shougo/neobundle.vim'
   
   " Add or remove your Bundles here:
+  NeoBundle 'Shougo/neocomplcache'
   NeoBundle 'Shougo/neosnippet.vim'
   NeoBundle 'Shougo/neosnippet-snippets'
   NeoBundle 'tpope/vim-fugitive'
@@ -93,7 +95,8 @@ if OSTYPE == "Darwin\n"
   
   " You can specify revision/branch/tag.
   NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-  
+  NeoBundle 'scrooloose/nerdtree' " this is for displaying file tree
+
   " Required:
   call neobundle#end()
   
@@ -111,3 +114,23 @@ if OSTYPE == "Darwin\n"
 elseif OSTYPE == "Linux\n"
   ""ここにLinux向けの設定
 endif
+    " Plugin key-mappings.
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  
+  " SuperTab like snippets behavior.
+  "imap <expr><TAB>
+  " \ pumvisible() ? "\<C-n>" :
+  " \ neosnippet#expandable_or_jumpable() ?
+  " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  
+  " For conceal markers.
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+  
+  "set snippet file dir
+  " let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/neosnippets/,~/.vim/snippets'
