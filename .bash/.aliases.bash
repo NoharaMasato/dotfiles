@@ -1,3 +1,4 @@
+echo "alias"
 function cdls() {
  \cd $1; 
  ls -G; 
