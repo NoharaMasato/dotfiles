@@ -24,6 +24,9 @@ case "${OSTYPE}" in
     # g++を最新のにするために読み込む
     export PATH=/usr/local/bin:$PATH
 
+    # set path for command making for myself
+    export PATH=/Users/noharamasato2/mycommand:$PATH
+
     # added by Anaconda3 5.2.0 installer
     # export PATH="/Users/noharamasato2/anaconda3/bin:$PATH"
 
@@ -33,9 +36,6 @@ case "${OSTYPE}" in
     # Go path 設定
     export PATH=$PATH:/usr/local/go/bin
     # export GOPATH=$HOME/go
-
-    # anaconda path
-    export PATH=/Users/user_name/anaconda3/bin:$PATH
 
     # Setting PATH for Python 3.7
     export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH

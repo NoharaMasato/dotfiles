@@ -26,8 +26,6 @@ set shortmess-=S
 " set list
 " set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
-autocmd FileType * setlocal formatoptions-=ro
-
 " can undo
 if has('persistent_undo')
   set undodir=~/.vim/undo

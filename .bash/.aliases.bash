@@ -5,7 +5,6 @@ function cdls() {
 }
 alias cd=cdls
 alias rm='rm -i' # confirm whem remove
-alias less='/usr/share/vim/vim80/macros/less.sh' # less をvimの支配下にあるlessを使う
 alias de='cd ~/Desktop'
 alias hi='history'
 alias dc='docker'
@@ -13,6 +12,7 @@ alias l='ls'
 
 case "${OSTYPE}" in
   darwin*) #これはmacの場合
+    alias less='/usr/share/vim/vim80/macros/less.sh' # less をvimの支配下にあるlessを使う
     alias ls="ls -G"
     alias la="ls -aG" 
     alias ll="ls -lG"
