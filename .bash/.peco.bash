@@ -1,4 +1,3 @@
-echo "peco"
 export HISTCONTROL="ignoredups"
 peco-history() {
   local NUM=$(history | wc -l)

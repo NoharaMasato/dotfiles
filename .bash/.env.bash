@@ -1,4 +1,3 @@
-echo "env"
 case "${OSTYPE}" in
   darwin*) 
     # pagerにlessを使う　manが色付きになる

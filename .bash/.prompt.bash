@@ -1,4 +1,3 @@
-echo "prompt"
 disc_ratio=`df -h | sed -n 2P | awk '{print $5}'`
 echo "ディスクの使用量は${disc_ratio}です"
 
