@@ -7,13 +7,37 @@ set encoding=utf-8
 " display number at left line
 set number
 
+" change number display
+nnoremap <Space>n :setlocal number! number?<CR>
+
+" move as visible
+nnoremap j gj
+nnoremap k gk
+
+" no need to save when changing buffer
+set hidden
+
 " display current linejk
 set cursorline
 
-" move to head and tail same as command line
-nnoremap <C-a> ^
-nnoremap <C-e> $
+" when split vertically go to below
+set splitbelow
 
+" set terminal size
+set termwinsize=7x0
+
+" nnoremap :terminal :terminal<CR>source $HOME/.bash_profile<CR>
+
+" move to head and tail
+nnoremap <SPACE>h ^
+nnoremap <SPACE>l $
+
+" change the current buffer
+nnoremap <silent> <C-j> :bprev<CR>
+nnoremap <silent> <C-k> :bnext<CR>
+
+" change esc to jj or jk  
+inoremap <silent> jk <ESC>
 
 " highlight searching word
 set hlsearch

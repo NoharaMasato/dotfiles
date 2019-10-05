@@ -1,5 +1,8 @@
 case "${OSTYPE}" in
   darwin*) 
+    # for displaying japanese
+    export LANG=ja_JP.UTF-8
+
     # pagerにlessを使う　manが色付きになる
     export PAGER=less
 
@@ -17,8 +20,12 @@ case "${OSTYPE}" in
 
     export LSCOLORS=gxfxcxdxbxegedabagacad #lsで表示されるディレクトリやファイル名の色を変更
 
+    export EDITOR=vim
+
+    export AWS_REGION=ap-northeast-1
+
     # aws-cliが使えるようにする
-    #export PATH=~/Library/Python/3.7/bin:$PATH
+    export PATH=~/Library/Python/3.7/bin:$PATH
 
     # g++を最新のにするために読み込む
     export PATH=/usr/local/bin:$PATH
@@ -33,11 +40,22 @@ case "${OSTYPE}" in
     # export PATH=$HOME/.nodebrew/current/bin:$PATH
 
     # Go path 設定
-    export PATH=$PATH:/usr/local/go/bin
+    export PATH=/usr/local/go/bin:$PATH
     # export GOPATH=$HOME/go
 
     # Setting PATH for Python 3.7
     export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
+
+    # set path for mysql5.7
+    export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
+    
+    # for loading rbenv ruby
+    eval "$(rbenv init -)"
+
+    # load bash_completion
+    if [ -f `brew --prefix`/etc/bash_completion ]; then
+          . `brew --prefix`/etc/bash_completion
+    fi
     ;;
   linux*) 
     ;;

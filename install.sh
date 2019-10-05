@@ -4,7 +4,7 @@
 # ln -s ~/dotfiles/.tmux.conf ~/
 # ln -s ~/dotfiles/.gitconfig ~/
 
-DOTPATH=~/.dotfiles
+DOTPATH=~/dotfiles
 
 for f in .??*
 do
