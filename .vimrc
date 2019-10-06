@@ -56,6 +56,9 @@ if has('persistent_undo')
   set undofile
 endif
 
+" coloring
+:syntax on
+
 " change color of comment out line 
 hi Comment ctermfg=Cyan
 
@@ -64,9 +67,6 @@ noremap <Space><CR> o<ESC>
 
 " 補完で候補を出すようにする 
 set pumheight=10
-
-" coloring
-:syntax on
 
 " tab config
 set expandtab "タブ入力を複数の空白入力に置き換える
