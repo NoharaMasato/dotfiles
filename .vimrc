@@ -17,7 +17,7 @@ nnoremap k gk
 " no need to save when changing buffer
 set hidden
 
-" display current linejk
+" display current line
 set cursorline
 
 " when split vertically go to below
@@ -29,12 +29,15 @@ set termwinsize=7x0
 " nnoremap :terminal :terminal<CR>source $HOME/.bash_profile<CR>
 
 " move to head and tail
-nnoremap <SPACE>h ^
-nnoremap <SPACE>l $
+noremap <SPACE>h ^
+noremap <SPACE>l $
 
 " change the current buffer
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
+
+" list buffers when pressing Ctrl x
+nnoremap <C-x> :ls<CR>:b<Space>
 
 " change esc to jj or jk  
 inoremap <silent> jk <ESC>
