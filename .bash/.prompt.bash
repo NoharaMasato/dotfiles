@@ -14,7 +14,7 @@ case "${OSTYPE}" in
     export PS1='\[\033[35m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
     ;;
   linux*)
-    git_prompt /home/nohara
+    git_prompt `pwd`
     export PS1='\[\033[35m\]\h:\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
     ;;
 esac
