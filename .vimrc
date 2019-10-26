@@ -1,6 +1,8 @@
 " load neobundle config file
-let $VIM_CONF = $HOME . '/.vim/conf'
-source $VIM_CONF/bundle-init.vim
+if has('mac')
+  let $VIM_CONF = $HOME . '/.vim/conf'
+  source $VIM_CONF/bundle-init.vim
+endif
 
 set encoding=utf-8 
 
@@ -23,8 +25,10 @@ set cursorline
 " when split vertically go to below
 set splitbelow
 
-" set terminal size
-set termwinsize=7x0
+if has('mac')
+  " set terminal size
+  set termwinsize=7x0
+endif
 
 " nnoremap :terminal :terminal<CR>source $HOME/.bash_profile<CR>
 
