@@ -1,3 +1,9 @@
+# historyの設定
+export HISTCONTROL=ignoredups:erasedups #重複した履歴を残さない
+HISTTIMEFORMAT='%F %T ' #履歴を日付とともに残す
+shopt -s histappend #bashの履歴をflushしないでappend
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 case "${OSTYPE}" in
   darwin*) 
     # for displaying japanese
