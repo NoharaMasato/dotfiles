@@ -5,6 +5,9 @@ function git_prompt(){
   GIT_PS1_SHOWDIRTYSTATE=true
 }
 
+# ctlr-sをスクリーンロックではなく、コマンドの履歴を戻る際に使う
+stty stop undef
+
 case "${OSTYPE}" in
   darwin*)
     git_prompt /Users/noharamasato2
