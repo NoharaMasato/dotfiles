@@ -9,7 +9,9 @@
   br = branch
   df = diff
   diffs = diff --cached
+  cm = commit
   cma = commit --amend
+  cman = commit --amend --no-edit
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
