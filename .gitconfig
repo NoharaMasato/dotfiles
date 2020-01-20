@@ -8,7 +8,7 @@
   co = checkout
   br = branch
   df = diff
-  diffs = diff --cached
+  dfc = diff --cached
   cm = commit
   cma = commit --amend
   cman = commit --amend --no-edit
