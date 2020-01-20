@@ -7,20 +7,34 @@ alias cd=cdls
 function cp_to_clip_bload(){
   cat $1 | pbcopy
 } 
-alias cpc=cp_to_clip_bload
 
 function compile_and_run_c(){
   g++ $1 && ./a.out
 }
-alias ga=compile_and_run_c
 
-# if command start from .. , it is a cd command
-function go_back(){
+function copy_atcoder_template_master(){
+  if [ $# -ne 1 ]; then
+    echo "指定された引数は$#個です。" 1>&2
+    echo "実行するには1個の引数が必要です。" 1>&2
+    return 1
+  fi
+  cp -n /Users/noharamasato2/Desktop/atcoder/template/master.cpp ./$1.cpp
+}
+
+function make_all_atcoder_files(){
+	for x in {a..f}
+	do
+    cpt $x
+	done
+}
+
+function go_back(){ # if command start from .. , it is "cd" command
   cd ..
 }
 alias '..'=go_back
 
 
+alias du='du -s -m -c * | sort -n -r' # -m:MB,-c:caliculate sum
 alias rm='rm -i' # confirm whem remove
 alias de='cd ~/Desktop'
 alias hi='history'
@@ -37,6 +51,12 @@ case "${OSTYPE}" in
     alias lla="ls -laG"
     alias "rails_dk"="docker-compose run web bin/rails"
     alias "rails_dks"="docker-compose run --rm --service-ports web"
+
+    #atcoder
+    alias cpc=cp_to_clip_bload
+    alias ga=compile_and_run_c
+    alias cpt=copy_atcoder_template_master
+    alias acp=make_all_atcoder_files
     ;;
   linux*) # linux
     alias ls='ls --color'
