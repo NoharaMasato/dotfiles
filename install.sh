@@ -1,3 +1,5 @@
+# ln -snfv ~/dotfiles/.tmux.conf ~/.tmux.conf
+
 DOTPATH=~/dotfiles
 
 for file in .??*

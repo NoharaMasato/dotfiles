@@ -24,7 +24,7 @@ function copy_atcoder_template_master(){
 function make_all_atcoder_files(){
 	for x in {a..f}
 	do
-    cpt $x
+    copy_atcoder_template_master $x
 	done
 }
 
@@ -55,7 +55,7 @@ case "${OSTYPE}" in
     #atcoder
     alias cpc=cp_to_clip_bload
     alias ga=compile_and_run_c
-    alias cpt=copy_atcoder_template_master
+    alias cpt=copy_atcoder_template_master #指定したアルファベットの.cppファイルをmasterから作成
     alias acp=make_all_atcoder_files
     ;;
   linux*) # linux
