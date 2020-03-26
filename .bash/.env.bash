@@ -27,6 +27,12 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 
 export EDITOR=vim
 
+# for anyenv
+if [ -d $HOME/.anyenv ]; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
+
 case "${OSTYPE}" in
   darwin*) 
     export AWS_REGION=ap-northeast-1
@@ -44,10 +50,6 @@ case "${OSTYPE}" in
     # set path for mysql5.7
     export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
     
-    # for anyenv
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
-
     # load bash_completion
     if [ -f `brew --prefix`/etc/bash_completion ]; then
           . `brew --prefix`/etc/bash_completion
