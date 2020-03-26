@@ -9,7 +9,7 @@ function cp_to_clip_bload(){
 } 
 
 function compile_and_run_c(){
-  g++ $1 && ./a.out
+  g++ -Wall -Wextra $1 && ./a.out
 }
 
 function copy_atcoder_template_master(){

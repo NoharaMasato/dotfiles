@@ -24,7 +24,8 @@ case "${OSTYPE}" in
     export LESS_TERMCAP_ue=$'\e[0m'
     export LESS_TERMCAP_us=$'\e[1;4;31m'
 
-    export LSCOLORS=gxfxcxdxbxegedabagacad #lsで表示されるディレクトリやファイル名の色を変更
+    #lsで表示されるディレクトリやファイル名の色を変更
+    export LSCOLORS=gxfxcxdxbxegedabagacad
 
     export EDITOR=vim
 
@@ -39,24 +40,16 @@ case "${OSTYPE}" in
     # set path for command making for myself
     export PATH=/Users/noharamasato2/mycommand:$PATH
 
-    # added by Anaconda3 5.2.0 installer
-    # export PATH="/Users/noharamasato2/anaconda3/bin:$PATH"
-
-    # node nodebrew path 設定
-    # export PATH=$HOME/.nodebrew/current/bin:$PATH
-
     # Go path 設定
     export PATH=/usr/local/go/bin:$PATH
     # export GOPATH=$HOME/go
 
-    # Setting PATH for Python 3.7
-    export PATH=/Library/Frameworks/Python.framework/Versions/3.7/bin:$PATH
-
     # set path for mysql5.7
     export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
     
-    # for loading rbenv ruby
-    eval "$(rbenv init -)"
+    # for anyenv
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
 
     # load bash_completion
     if [ -f `brew --prefix`/etc/bash_completion ]; then
