@@ -56,7 +56,7 @@ case "${OSTYPE}" in
     export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
     
     # for loading rbenv ruby
-    eval "$(rbenv init -)"
+    eval "$(anyenv init -)"
 
     # load bash_completion
     if [ -f `brew --prefix`/etc/bash_completion ]; then
