@@ -1,0 +1,24 @@
+{
+    "C_Cpp.updateChannel": "Insiders",
+    "terminal.integrated.shellArgs.linux": ["-l"],
+    "vim.easymotion": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>","l"],
+            "after": ["$"]
+        },
+        {
+            "before": ["<leader>","h"],
+            "after": ["^"]
+        },
+        {
+            "before": ["<leader>","w"],
+            "commands": [":w"]
+        },
+        {
+            "before": ["<Esc>","<Esc>"],
+            "commands": [":nohl"]
+        }
+    ]
+}
