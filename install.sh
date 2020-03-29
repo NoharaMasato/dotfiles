@@ -4,6 +4,8 @@ DOTPATH=~/dotfiles
 
 for file in .??*
 do
-  [ "$file" = ".git" ] && continue
+  ([ "$file" = ".git" ] || [ "$file" = ".vscode" ]) && continue
   ln -snfv "$DOTPATH/$file" "$HOME"/"$file"
 done
+
+bash .vscode/vscode_install.sh
