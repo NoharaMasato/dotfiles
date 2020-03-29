@@ -8,4 +8,8 @@ do
   ln -snfv "$DOTPATH/$file" "$HOME"/"$file"
 done
 
-bash .vscode/vscode_install.sh
+case "${OSTYPE}" in
+  darwin*) # mac
+    bash .vscode/vscode_install.sh
+    ;;
+esac
