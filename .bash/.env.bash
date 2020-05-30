@@ -27,18 +27,12 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 
 export EDITOR=vim
 
-# for anyenv
-if [ -d $HOME/.anyenv ]; then
-  export PATH="$HOME/.anyenv/bin:$PATH"
-  eval "$(anyenv init -)"
-fi
-
 case "${OSTYPE}" in
   darwin*) 
     export AWS_REGION=ap-northeast-1
 
-    # g++を最新のにするために読み込む
-    export PATH=/usr/local/bin:$PATH
+    # brewで入れたものを優先的に読み込む
+    export PATH=/usr/local/bin:/usr/local/sbin/:$PATH
 
     # set path for command making for myself
     export PATH=/Users/noharamasato2/mycommand:$PATH
@@ -49,12 +43,23 @@ case "${OSTYPE}" in
 
     # set path for mysql5.7
     export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
+
+    export PATH=~/Library/flutter/bin:$PATH
     
     # load bash_completion
     if [ -f `brew --prefix`/etc/bash_completion ]; then
           . `brew --prefix`/etc/bash_completion
     fi
+
+    export GOPATH=$HOME/go
     ;;
   linux*) 
     ;;
 esac
+
+# for anyenv
+if [ -d $HOME/.anyenv ]; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
+

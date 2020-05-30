@@ -9,7 +9,7 @@ function cp_to_clip_bload(){
 } 
 
 function compile_and_run_c(){
-  g++ -Wall -Wextra $1 && ./a.out
+  g++ -Wall -Wextra -o out $1 && ./out
 }
 
 function copy_atcoder_template_master(){
@@ -26,6 +26,9 @@ function make_all_atcoder_files(){
 	do
     copy_atcoder_template_master $x
 	done
+  #cp /Users/noharamasato2/Desktop/atcoder/template/x.sh ./
+  #/Users/noharamasato2/Desktop/atcoder/template/init.sh # init directory
+  #go build /Users/noharamasato2/Desktop/atcoder/template/fetch_testcase.go
 }
 
 function go_back(){ # if command start from .. , it is "cd" command

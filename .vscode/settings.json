@@ -1,6 +1,14 @@
 {
     "C_Cpp.updateChannel": "Insiders",
     "terminal.integrated.shellArgs.linux": ["-l"],
+    "editor.snippetSuggestions": "top",
+
+    // indent
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+
+    // vim
     "vim.easymotion": true,
     "vim.leader": "<space>",
     "vim.normalModeKeyBindings": [
@@ -20,5 +28,6 @@
             "before": ["<Esc>","<Esc>"],
             "commands": [":nohl"]
         }
-    ]
+    ],
+    "window.zoomLevel": 0
 }
