@@ -52,6 +52,7 @@ case "${OSTYPE}" in
     fi
 
     export GOPATH=$HOME/go
+    ssh-add ~/.ssh/id_rsa_git
     ;;
   linux*) 
     ;;
