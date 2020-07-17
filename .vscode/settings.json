@@ -29,5 +29,6 @@
             "commands": [":nohl"]
         }
     ],
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "cmake.configureOnOpen": true
 }
