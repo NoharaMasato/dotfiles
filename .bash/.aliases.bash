@@ -41,12 +41,15 @@ alias du='du -s -m -c * | sort -n -r' # -m:MB,-c:caliculate sum
 alias rm='rm -i' # confirm whem remove
 alias de='cd ~/Desktop'
 alias hi='history'
-alias dc='docker'
 alias l='ls'
+
+alias dc='docker'
+alias dcc='docker-compose'
+alias k='kubectl'
 
 case "${OSTYPE}" in
   darwin*) # mac
-    alias less='/usr/share/vim/vim80/macros/less.sh' # less をvimの支配下にあるlessを使う
+    alias less='/usr/share/vim/vim81/macros/less.sh' # less をvimの支配下にあるlessを使う
     alias ls="ls -G"
     alias la="ls -aG" 
     alias ll="ls -lG"
