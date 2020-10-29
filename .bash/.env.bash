@@ -39,6 +39,7 @@ case "${OSTYPE}" in
 
     # Go path 設定
     export PATH=/usr/local/go/bin:$PATH
+    export PATH=~/go/bin:$PATH
     # export GOPATH=$HOME/go
 
     # set path for mysql5.7
@@ -50,6 +51,12 @@ case "${OSTYPE}" in
     if [ -f `brew --prefix`/etc/bash_completion ]; then
           . `brew --prefix`/etc/bash_completion
     fi
+
+    # The next line updates PATH for the Google Cloud SDK.
+    if [ -f '/Users/noharamasato2/google-cloud-sdk/path.bash.inc' ]; then . '/Users/noharamasato2/google-cloud-sdk/path.bash.inc'; fi
+
+    # The next line enables shell command completion for gcloud.
+    if [ -f '/Users/noharamasato2/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/noharamasato2/google-cloud-sdk/completion.bash.inc'; fi
 
     export GOPATH=$HOME/go
     ssh-add ~/.ssh/id_rsa_git
