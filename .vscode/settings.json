@@ -1,34 +1,65 @@
 {
-    "C_Cpp.updateChannel": "Insiders",
-    "terminal.integrated.shellArgs.linux": ["-l"],
-    "editor.snippetSuggestions": "top",
-
+    // "C_Cpp.updateChannel": "Insiders",
+    // "terminal.integrated.shellArgs.linux": [
+    //     "-l"
+    // ],
+    // "editor.snippetSuggestions": "top",
     // indent
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.detectIndentation": true,
-
     // vim
     "vim.easymotion": true,
     "vim.leader": "<space>",
     "vim.normalModeKeyBindings": [
         {
-            "before": ["<leader>","l"],
-            "after": ["$"]
+            "before": [
+                "<leader>",
+                "l"
+            ],
+            "after": [
+                "$"
+            ] },
+        {
+            "before": [
+                "<leader>",
+                "h"
+            ],
+            "after": [
+                "^"
+            ]
         },
         {
-            "before": ["<leader>","h"],
-            "after": ["^"]
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                ":w"
+            ]
         },
         {
-            "before": ["<leader>","w"],
-            "commands": [":w"]
-        },
-        {
-            "before": ["<Esc>","<Esc>"],
-            "commands": [":nohl"]
+            "before": [
+                "<Esc>",
+                "<Esc>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
         }
     ],
     "window.zoomLevel": 0,
-    "cmake.configureOnOpen": true
+    // golang
+    "go.formatTool": "goimports",
+
+    // cpp
+    "cmake.configureOnOpen": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, IndentWidth: 2}",
+
+    // python
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.formatOnSave": true
+    },
 }
