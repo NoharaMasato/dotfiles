@@ -34,13 +34,14 @@ case "${OSTYPE}" in
     # brewで入れたものを優先的に読み込む
     export PATH=/usr/local/bin:/usr/local/sbin/:$PATH
 
-    # set path for command making for myself
-    export PATH=/Users/noharamasato2/mycommand:$PATH
-
     # Go path 設定
     export PATH=/usr/local/go/bin:$PATH
     export PATH=~/go/bin:$PATH
     # export GOPATH=$HOME/go
+
+    # rust
+    export PATH=~/.cargo/bin:$PATH
+    source "$HOME/.cargo/env"
 
     # set path for mysql5.7
     export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
@@ -52,14 +53,15 @@ case "${OSTYPE}" in
           . `brew --prefix`/etc/bash_completion
     fi
 
+
     # The next line updates PATH for the Google Cloud SDK.
-    if [ -f '/Users/noharamasato2/google-cloud-sdk/path.bash.inc' ]; then . '/Users/noharamasato2/google-cloud-sdk/path.bash.inc'; fi
+    if [ -f '/Users/noharamasato/google-cloud-sdk/path.bash.inc' ]; then . '/Users/noharamasato/google-cloud-sdk/path.bash.inc'; fi
 
     # The next line enables shell command completion for gcloud.
-    if [ -f '/Users/noharamasato2/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/noharamasato2/google-cloud-sdk/completion.bash.inc'; fi
+    if [ -f '/Users/noharamasato/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/noharamasato/google-cloud-sdk/completion.bash.inc'; fi
 
     export GOPATH=$HOME/go
-    ssh-add ~/.ssh/id_rsa_git
+    ssh-add ~/.ssh/id_rsa
     ;;
   linux*) 
     ;;
