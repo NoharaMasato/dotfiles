@@ -1,65 +1,33 @@
 {
-    // "C_Cpp.updateChannel": "Insiders",
-    // "terminal.integrated.shellArgs.linux": [
-    //     "-l"
-    // ],
-    // "editor.snippetSuggestions": "top",
+
+    // terminal
+    "terminal.integrated.shell.osx": "/bin/bash",
+    "remote.SSH.configFile": "/Users/noharamasato/.ssh/config",
+
     // indent
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.detectIndentation": true,
+
     // vim
-    "vim.easymotion": true,
-    "vim.leader": "<space>",
     "vim.normalModeKeyBindings": [
         {
-            "before": [
-                "<leader>",
-                "l"
-            ],
-            "after": [
-                "$"
-            ] },
-        {
-            "before": [
-                "<leader>",
-                "h"
-            ],
-            "after": [
-                "^"
-            ]
+            "before": [ "c", "c" ], // vscodevimのバグでなぜかインデントされないので、先頭に移動してからCをするというようにしている
+            "after": [ "^", "C" ],
         },
-        {
-            "before": [
-                "<leader>",
-                "w"
-            ],
-            "commands": [
-                ":w"
-            ]
-        },
-        {
-            "before": [
-                "<Esc>",
-                "<Esc>"
-            ],
-            "commands": [
-                ":nohl"
-            ]
-        }
     ],
-    "window.zoomLevel": 0,
-    // golang
-    "go.formatTool": "goimports",
-
-    // cpp
-    "cmake.configureOnOpen": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, IndentWidth: 2}",
 
     // python
     "[python]": {
         "editor.tabSize": 4,
         "editor.formatOnSave": true
     },
+
+    // C++
+    "C_Cpp.updateChannel": "Insiders",
+    
+    // trailing space
+    "trailing-spaces.highlightCurrentLine": false,
+    "trailing-spaces.trimOnSave": true,
+    "editor.renderControlCharacters": true
 }
