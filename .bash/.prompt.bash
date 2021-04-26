@@ -1,25 +1,22 @@
-function git_prompt(){
-  # git補間とプロンプト表示にブランチ名を出すかつ、短くする
-  source $1/.git-completion.bash
-  source $1/.git-prompt.sh
-  GIT_PS1_SHOWDIRTYSTATE=true
-}
-
 # ctlr-sをスクリーンロックではなく、コマンドの履歴を戻る際に使う
 stty stop undef
 
+source $HOME/.git-completion.bash
+source $HOME/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+
 case "${OSTYPE}" in
   darwin*)
-    git_prompt /Users/noharamasato2
     export PS1='\[\033[35m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
-    disc_ratio=`df -h | sed -n 2P | awk '{print $5}'`
+
+    # autocomplete .ssh/config
+    function _compreply_ssh(){
+      COMPREPLY=(`cat ~/.ssh/config | grep -i -e '^host' | cut -d " " -f 2 | grep -E "$2"`)
+    }
+    complete -F _compreply_ssh ssh
     ;;
   linux*)
-    git_prompt `pwd`
     export PS1='\[\033[35m\]\h:\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
-    disc_ratio=`df -h | sed -n 4P | awk '{print $5}'`
     ;;
 esac
-
-echo "ディスクの使用量は${disc_ratio}です"
 
