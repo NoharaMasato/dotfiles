@@ -13,5 +13,5 @@ ln -s "$SCRIPT_DIR/keybindings.json" "${VSCODE_SETTING_DIR}/keybindings.json"
 cat ~/dotfiles/.vscode/extensions | while read line
 do
    code --install-extension $line
- done
+done
 
