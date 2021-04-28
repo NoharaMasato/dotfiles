@@ -7,7 +7,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 
 case "${OSTYPE}" in
   darwin*)
-    export PS1='\[\033[35m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$'
+    export PS1='\[\033[35m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
     # autocomplete .ssh/config
     function _compreply_ssh(){
@@ -16,7 +16,7 @@ case "${OSTYPE}" in
     complete -F _compreply_ssh ssh
     ;;
   linux*)
-    export PS1='\[\033[35m\]\h:\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$'
+    export PS1='\[\033[35m\]\h:\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
     ;;
 esac
 
