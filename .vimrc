@@ -10,9 +10,6 @@ set cursorline
 " when split vertically go to below
 set splitbelow
 
-" display number at left line
-set number
-
 " display number when search word
 set shortmess-=S
 
@@ -82,4 +79,8 @@ nnoremap <C-x> :ls<CR>:b<Space>
 
 " delete searching hifhlight
 " nnoremap <ESC><ESC> :nohl<CR>
+
+" display number at left line
+" set number
+
 
