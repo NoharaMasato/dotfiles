@@ -49,7 +49,7 @@ case "${OSTYPE}" in
 
     alias westzoom="open $WEST_ZOOM_URL"
 
-    alias norm="git ls-files -x *h *c | xargs norminette"
+    alias norm="git ls-files | grep -e .c -e .h | xargs norminette"
 
     #atcoder
     alias cpc=cp_to_clip_bload

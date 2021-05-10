@@ -14,6 +14,7 @@ case "${OSTYPE}" in
       COMPREPLY=(`cat ~/.ssh/config | grep -i -e '^host' | cut -d " " -f 2 | grep -E "$2"`)
     }
     complete -F _compreply_ssh ssh
+    complete -F _compreply_ssh scp
     ;;
   linux*)
     export PS1='\[\033[35m\]\h:\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
