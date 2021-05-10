@@ -1,6 +1,9 @@
 bash_conf=~/.bash
 
-source ~/.env
+if test -f "~/.env"; then
+  source ~/.env
+fi
+
 for file in $(ls -aF $bash_conf/ | grep -v /)
 do
   [ "$file" = ".bashrc" ] && continue
