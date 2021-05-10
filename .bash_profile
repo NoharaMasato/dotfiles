@@ -1,6 +1,6 @@
 bash_conf=~/.bash
 
-if test -f "~/.env"; then
+if test -f "$HOME/.env"; then
   source ~/.env
 fi
 
